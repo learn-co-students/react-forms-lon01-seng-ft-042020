@@ -18,9 +18,15 @@ class Form extends React.Component {
     })
   }
 
+  // handleSubmit = e => {
+  //   e.preventDefault()
+  //   let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
+  //   this.sendFormDataSomewhere(formData)
+  // }}
+
   render() {
     return (
-      <form>
+      <form onSubmit={e => this.handleSubmit}>
         <input type="text" name="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
         <input type="text" name="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
       </form>
